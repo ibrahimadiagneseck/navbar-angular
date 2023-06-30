@@ -27,6 +27,7 @@ export class TableComponent {
 
   loadcustomer() {
     this.service.GetCustomer().subscribe(res => {
+
       this.customerlist = res;
       this.dataSource = new MatTableDataSource<Customer>(this.customerlist);
       this.dataSource.paginator = this.paginatior;
@@ -47,7 +48,7 @@ export class TableComponent {
     this.Openpopup(code, 'Customer Detail',UserdetailComponent);
   }
 
-  
+
 
   addcustomer(){
     this.Openpopup(0, 'Add Customer',PopupComponent);
